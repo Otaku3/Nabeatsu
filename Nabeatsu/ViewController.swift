@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var number: Int = 0
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var faceLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,15 +25,15 @@ class ViewController: UIViewController {
             return true
         }
         
-//        // 問題2: 1の位が3かどうか調べる
-//        if number % 10 == 3{
-//            return true
-//        }
-//        // 問題3: 10の位が3かどうか調べる
-//        if number / 10 % 3 == 3{
-//            return true
-//        }
-
+        //        // 問題2: 1の位が3かどうか調べる
+        //        if number % 10 == 3{
+        //            return true
+        //        }
+        //        // 問題3: 10の位が3かどうか調べる
+        //        if number / 10 % 3 == 3{
+        //            return true
+        //        }
+        
         // 問題4: 3がつくかどうか調べる
         var checkNum: Int = number
         while checkNum != 0 {
@@ -46,11 +46,17 @@ class ViewController: UIViewController {
         }
         
         // 問題4をやるときは問題3と問題2の答えを消してから書こう
-
+        
         
         return false
     }
     
+    func isDog() -> Bool{
+        if number % 5 == 0{
+            return true
+        }
+        return false
+    }
     
     
     @IBAction func plusButton(){
@@ -58,12 +64,21 @@ class ViewController: UIViewController {
         countLabel.text = String(number)
         
         if isAho() == true {
-            
-            faceLabel.text = "ﾍ(ﾟ∀ﾟﾍ)ｱﾋｬ"
+            if isDog() == true{
+                faceLabel.text = "U°∀°U"
+            }
+            else{
+                faceLabel.text = "ﾍ(ﾟ∀ﾟﾍ)ｱﾋｬ"
+            }
         } else {
-            
-            faceLabel.text = "(゜o゜)"
+            if isDog() == true{
+                faceLabel.text = "U・x・U"
+            }
+            else{
+                faceLabel.text = "(゜o゜)"
+            }
         }
+        
     }
     
     @IBAction func clear(){
@@ -71,7 +86,7 @@ class ViewController: UIViewController {
         countLabel.text = String(number)
         faceLabel.text = "(゜o゜)"
     }
-
-
+    
+    
 }
 
