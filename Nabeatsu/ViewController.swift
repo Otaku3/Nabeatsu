@@ -58,6 +58,16 @@ class ViewController: UIViewController {
         return false
     }
     
+    func isClever() -> Int{
+        var count: Int = 0
+        for i in 2..<number{
+            if(number%i == 0){
+                count += 1
+            }
+        }
+        return count
+    }
+    
     
     @IBAction func plusButton(){
         number = number + 1
@@ -78,6 +88,13 @@ class ViewController: UIViewController {
                 faceLabel.text = "(゜o゜)"
             }
         }
+        
+        if(number >= 2){
+            if isClever() == 0 {
+                faceLabel.text = "(￣ー￣)"
+            }
+        }
+        
         
     }
     
