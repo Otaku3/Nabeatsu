@@ -25,18 +25,24 @@ class ViewController: UIViewController {
             return true
         }
         
-        // 問題2: 1の位が3かどうか調べる
-        if number % 10 == 3{
-            return true
-        }
-        // 問題3: 10の位が3かどうか調べる
-        if number / 10 % 3 == 3{
-            return true
-        }
+//        // 問題2: 1の位が3かどうか調べる
+//        if number % 10 == 3{
+//            return true
+//        }
+//        // 問題3: 10の位が3かどうか調べる
+//        if number / 10 % 3 == 3{
+//            return true
+//        }
 
         // 問題4: 3がつくかどうか調べる
-        while number <= 10 {
-            <#code#>
+        var checkNum: Int = number
+        while checkNum != 0 {
+            if checkNum % 10 == 3{
+                return true
+            }
+            else{
+                checkNum = checkNum/10
+            }
         }
         
         // 問題4をやるときは問題3と問題2の答えを消してから書こう
